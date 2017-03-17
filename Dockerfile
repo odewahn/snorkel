@@ -2,7 +2,7 @@ FROM jupyter/scipy-notebook:6399d2faf16f
 
 USER root
 RUN apt-get update
-RUN apt-get install -y curl
+RUN apt-get install -y curl python-lxml
 
 USER jovyan
 ADD python-package-requirement.txt /home/jovyan/work/python-package-requirement.txt

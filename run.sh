@@ -1,5 +1,5 @@
 # Set & move to home directory
-source set_env.sh
+#source set_env.sh
 #cd "$SNORKELHOME"
 
 # Make sure the submodules are installed
@@ -14,6 +14,12 @@ if [ ! -f "$PARSER" ]; then
         [Nn]* ) ;;
     esac
 fi
+
+export SNORKELHOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "Snorkel home directory: $SNORKELHOME"
+export PYTHONPATH="$PYTHONPATH:$SNORKELHOME:$SNORKELHOME/treedlib"
+export PATH="$PATH:$SNORKELHOME:$SNORKELHOME/treedlib"
+echo "Environment variables set!"
 
 # Launch jupyter notebook!
 echo "Launching Jupyter Notebook..."
