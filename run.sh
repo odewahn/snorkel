@@ -1,6 +1,6 @@
 # Set & move to home directory
 source set_env.sh
-cd "$SNORKELHOME"
+#cd "$SNORKELHOME"
 
 # Make sure the submodules are installed
 git submodule update --init --recursive
@@ -17,4 +17,4 @@ fi
 
 # Launch jupyter notebook!
 echo "Launching Jupyter Notebook..."
-jupyter notebook
+jupyter notebook --no-browser --port 8888 --ip=*
